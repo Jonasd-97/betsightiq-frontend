@@ -1,6 +1,5 @@
-﻿// Correct configuration:
-module.exports = {
+﻿module.exports = {
   typescript: {
-    ignoreBuildErrors: true // Only this line is needed
+    ignoreBuildErrors: true // Force-disable TS checks
   }
 }
