@@ -1,17 +1,15 @@
 import React from "react";
 
-interface MarketCardProps {
-  title: string;
-  odds: string;
-  confidence: string;
-}
-
-export const MarketCard: React.FC<MarketCardProps> = ({ title, odds, confidence }) => {
+const MarketCard = ({ title, odds, confidence }) => {
   return (
-    <div className="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition">
-      <h2 className="text-xl font-semibold mb-2">{title}</h2>
-      <p className="text-gray-400 mb-4">Odds: {odds}</p>
-      <p className="text-green-400 font-bold">Confidence: {confidence}</p>
+    <div className="bg-gray-800 p-6 rounded-lg">
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <div className="flex justify-between">
+        <span>Odds: {odds}</span>
+        <span>Confidence: {confidence}</span>
+      </div>
     </div>
   );
 };
+
+export default MarketCard;
