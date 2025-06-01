@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '../styles/HomeView.module.css';
+import styles from '../styles/homeview.module.css';
 import Link from 'next/link';
 
 const HomeView = () => {
