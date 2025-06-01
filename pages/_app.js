@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import * as gtag from '../lib/gtag'; // Google Analytics
-import Layout from '../components/Layout.jsx'; // Optional Layout wrapper
+import Layout from '../components/Layout'; // Optional Layout wrapper
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
