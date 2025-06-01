@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import * as gtag from '../lib/gtag'; // Google Analytics
-import Layout from '../components/Layout.jsx'; // Optional Layout wrapper
+import Layout from '../components/Layout.jsx'; // Layout wrapper
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }) {
         gtag.pageview(url);
       }
     };
+
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
@@ -23,20 +24,11 @@ export default function App({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <>
+    <Layout>
       <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#2563eb" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      
-      {/* If Layout exists, wrap with Layout, else fallback */}
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </>
+      <Component {...pageProps} />
+    </Layout>
   );
 }
