@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Homepage (Primary Entry Point) -->
+  <url>
+    <loc>https://www.betsightiq.com/</loc>
+    <lastmod>2024-06-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://www.betsightiq.com/images/og-image.jpg</image:loc>
+      <image:title>BetSightIQ - AI Sports Betting Intelligence</image:title>
+    </image:image>
+  </url>
+
+  <!-- Key Conversion Pages -->
+  <url>
+    <loc>https://www.betsightiq.com/signup</loc>
+    <lastmod>2024-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.betsightiq.com/signup"/>
+  </url>
+
+  <!-- Pricing Information -->
+  <url>
+    <loc>https://www.betsightiq.com/pricing</loc>
+    <lastmod>2024-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.betsightiq.com/pricing"/>
+  </url>
+
+  <!-- Features Page -->
+  <url>
+    <loc>https://www.betsightiq.com/features</loc>
+    <lastmod>2024-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.betsightiq.com/features"/>
+  </url>
+
+  <!-- Blog Page -->
+  <url>
+    <loc>https://www.betsightiq.com/blog</loc>
+    <lastmod>2024-06-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.70</priority>
+    <image:image>
+      <image:loc>https://www.betsightiq.com/images/blog-header.jpg</image:loc>
+      <image:title>BetSightIQ Blog - AI Sports Betting News</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.betsightiq.com/videos/blog-thumbnail.jpg</video:thumbnail_loc>
+      <video:title>How AI is Changing Sports Betting</video:title>
+      <video:description>Learn how BetSightIQ leverages machine learning models to predict sports outcomes and identify betting value.</video:description>
+      <video:content_loc>https://www.betsightiq.com/videos/ai-betting-insights.mp4</video:content_loc>
+      <video:publication_date>2024-06-14T08:00:00+00:00</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://www.betsightiq.com/terms</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.betsightiq.com/terms"/>
+  </url>
+
+  <url>
+    <loc>https://www.betsightiq.com/privacy</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.betsightiq.com/privacy"/>
+  </url>
+
+</urlset>
