@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '../styles/homeview.module.css';
+import styles from '../styles/HomeView.module.css';
 import Link from 'next/link';
 
 const HomeView = () => {
@@ -13,11 +13,11 @@ const HomeView = () => {
           BetSightIQ delivers AI-driven insights and high-value alerts to maximize your edge in the betting market.
         </p>
         <div className={styles['button-group']}>
-          <Link href="/signup">
-            <button className={styles['primary-button']}>Get Started</button>
+          <Link href="/signup" passHref>
+            <a className={styles['primary-button']}>Get Started</a>
           </Link>
-          <Link href="/pricing">
-            <button className={styles['secondary-button']}>View Pricing</button>
+          <Link href="/pricing" passHref>
+            <a className={styles['secondary-button']}>View Pricing</a>
           </Link>
         </div>
       </section>
@@ -47,8 +47,8 @@ const HomeView = () => {
       {/* CTA Section */}
       <section className={styles['cta-section']}>
         <h2>Ready to Elevate Your Game?</h2>
-        <Link href="/signup">
-          <button className={styles['primary-button']}>Get Started Today</button>
+        <Link href="/signup" passHref>
+          <a className={styles['primary-button']}>Get Started Today</a>
         </Link>
       </section>
     </div>
