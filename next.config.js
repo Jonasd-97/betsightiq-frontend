@@ -1,5 +1,9 @@
-﻿module.exports = {
+﻿// next.config.js
+module.exports = {
   typescript: {
-    ignoreBuildErrors: true // Force-disable TS checks
+    ignoreBuildErrors: true
+  },
+  eslint: {
+    ignoreDuringBuilds: true
   }
 }

@@ -2,6 +2,144 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-gray-900 text-white;
+/* Base layer for color variables */
+@layer base {
+  :root {
+    --color-background: 255 255 255;
+    --color-foreground: 23 23 23;
+    --color-border: 229 229 229;
+    --color-card: 255 255 255;
+    --color-card-foreground: 23 23 23;
+    --color-primary: 59 130 246;
+    --color-primary-foreground: 255 255 255;
+    --color-secondary: 16 185 129;
+    --color-secondary-foreground: 255 255 255;
+    --color-muted: 244 244 245;
+    --color-muted-foreground: 113 113 122;
+    --color-input: 229 229 229;
+    --color-ring: 59 130 246;
+    --color-sidebar: 245 245 245;
+    --color-sidebar-foreground: 23 23 23;
+    --color-sidebar-primary: 59 130 246;
+    --color-sidebar-primary-foreground: 255 255 255;
+    --color-sidebar-accent: 16 185 129;
+    --color-sidebar-accent-foreground: 255 255 255;
+    --color-sidebar-border: 229 229 229;
+    --color-sidebar-ring: 59 130 246;
+  }
+
+  .dark {
+    --color-background: 23 23 23;
+    --color-foreground: 245 245 245;
+    --color-border: 38 38 38;
+    --color-card: 38 38 38;
+    --color-card-foreground: 245 245 245;
+    --color-primary: 96 165 250;
+    --color-primary-foreground: 23 23 23;
+    --color-secondary: 52 211 153;
+    --color-secondary-foreground: 23 23 23;
+    --color-muted: 63 63 70;
+    --color-muted-foreground: 161 161 170;
+    --color-input: 63 63 70;
+    --color-ring: 147 197 253;
+    --color-sidebar: 38 38 38;
+    --color-sidebar-foreground: 245 245 245;
+    --color-sidebar-primary: 96 165 250;
+    --color-sidebar-primary-foreground: 23 23 23;
+    --color-sidebar-accent: 52 211 153;
+    --color-sidebar-accent-foreground: 23 23 23;
+    --color-sidebar-border: 63 63 70;
+    --color-sidebar-ring: 147 197 253;
+  }
+
+  html {
+    @apply scroll-smooth;
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-primary-foreground;
+  }
+
+  * {
+    @apply border-border;
+    &:focus-visible {
+      @apply outline-none ring-2 ring-primary/50 ring-offset-2 ring-offset-background;
+    }
+  }
+}
+
+/* Components Layer */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 font-medium rounded-lg transition-all;
+    @apply duration-200 ease-in-out focus-visible:outline-none disabled:opacity-50 disabled:pointer-events-none;
+    
+    &-primary {
+      @apply bg-primary text-white hover:bg-primary/80;
+      @apply dark:bg-primary dark:hover:bg-primary/90;
+    }
+
+    &-secondary {
+      @apply bg-secondary text-white hover:bg-secondary/80;
+      @apply dark:bg-secondary dark:hover:bg-secondary/90;
+    }
+
+    &-ghost {
+      @apply bg-transparent hover:bg-foreground/5;
+    }
+  }
+
+  .container {
+    @apply px-4 sm:px-6 lg:px-8 2xl:max-w-screen-2xl 2xl:px-10;
+
+    &-narrow {
+      @apply max-w-4xl mx-auto;
+    }
+  }
+
+  .card {
+    @apply rounded-xl border bg-card p-6 shadow-sm transition-all hover:shadow-md;
+  }
+}
+
+/* Utilities Layer */
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      @apply hidden;
+    }
+  }
+
+  .text-fluid {
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
+  }
+
+  .word-break-cjk {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    line-break: strict;
+  }
+
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, theme('colors.primary'), theme('colors.secondary'));
+  }
 }
