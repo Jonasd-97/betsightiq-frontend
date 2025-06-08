@@ -4,9 +4,9 @@ import Script from 'next/script';
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      {/* Google Analytics */}
+      {/* Google Analytics Script */}
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX`} // Replace with your GA ID
+        src="https://www.googletagmanager.com/gtag/js?id=G-233Z2DMR8F"
         strategy="afterInteractive"
       />
       <Script
@@ -17,15 +17,18 @@ function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX', {
+            gtag('config', 'G-233Z2DMR8F', {
               page_path: window.location.pathname,
             });
           `,
         }}
       />
+
+      {/* Main App Component */}
       <Component {...pageProps} />
     </>
   );
 }
 
 export default MyApp;
+
