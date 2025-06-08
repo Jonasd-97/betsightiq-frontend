@@ -1,4 +1,68 @@
-.next 
-node_modules 
-.vercel 
+# -----------------------------------
+# Node.js Core
+# -----------------------------------
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# -----------------------------------
+# Next.js Specific
+# -----------------------------------
+.next
+out
 .vercel
+
+# -----------------------------------
+# Logs
+# -----------------------------------
+logs
+*.log
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# -----------------------------------
+# OS & Editor Junk
+# -----------------------------------
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+*.sublime-workspace
+*.sublime-project
+
+# -----------------------------------
+# Build & Cache
+# -----------------------------------
+.cache
+coverage
+build
+tmp
+temp
+
+# -----------------------------------
+# Others
+# -----------------------------------
+*.local
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# -----------------------------------
+# MacOS system files
+# -----------------------------------
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
