@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Link from "next/link";  // <== Proper import
+import Link from "next/link";  // <== Correct Link import
 
 export default function Pricing() {
   const plans = [
@@ -106,13 +106,14 @@ export default function Pricing() {
                 </p>
               </div>
               
-              <Link href="/signup" legacyBehavior legacyBehavior><a className={`mt-8 w-full inline-block py-3 px-6 rounded-md font-medium text-center ${
-                  plan.popular
-                    ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                    : 'bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-white'
-                }`}>
+              <Link href="/signup" legacyBehavior>
+                <a className={`mt-8 w-full inline-block py-3 px-6 rounded-md font-medium text-center ${
+                    plan.popular
+                      ? 'bg-indigo-600 text-white hover:bg-indigo-700'
+                      : 'bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-white'
+                  }`}>
                   {plan.cta}
-                </Link>
+                </a>
               </Link>
             </div>
             
@@ -193,9 +194,10 @@ export default function Pricing() {
           <p className="mt-4 text-lg leading-6 text-indigo-200">
             No credit card required. Cancel anytime.
           </p>
-          <Link href="/signup" legacyBehavior legacyBehavior><a className="mt-8 inline-block bg-white text-indigo-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition-all transform hover:scale-105">
+          <Link href="/signup" legacyBehavior>
+            <a className="mt-8 inline-block bg-white text-indigo-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition-all transform hover:scale-105">
               Get Started Now
-            </Link>
+            </a>
           </Link>
         </div>
       </div>
