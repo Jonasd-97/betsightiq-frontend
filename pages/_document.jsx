@@ -1,8 +1,9 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import * as gtag from '../lib/gtag'; // Make sure this path is correct
 
 export default function Document() {
   return (
-    <Html lang="en" className="dark h-full" suppressHydrationWarning> {/* Force Dark Mode */}
+    <Html lang="en" className="dark h-full" suppressHydrationWarning>
       <Head>
         {/* Primary Meta Tags */}
         <meta charSet="UTF-8" />
@@ -37,6 +38,24 @@ export default function Document() {
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Google Analytics Script */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gtag.GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
       </Head>
       <body className="min-h-full bg-gray-900 text-gray-50 transition-colors duration-300">
         <Main />
