@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Link from "next/link";  // <== Correct Link import
+import Link from "next/link";
 
 export default function Pricing() {
   const plans = [
