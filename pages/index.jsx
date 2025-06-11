@@ -1,6 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from 'next/head'; // Only needed for Next.js
 
 export default function HomePage() {
   return (
@@ -19,40 +18,6 @@ export default function HomePage() {
       </Head>
 
       <main>
-        {/* Navigation Bar */}
-        <nav style={{
-          background: '#1e40af',
-          padding: '1rem 2rem',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '1.5rem',
-          flexWrap: 'wrap',
-        }}>
-          {[
-            ['/', 'Home'],
-            ['/about', 'About'],
-            ['/analytics', 'Analytics'],
-            ['/dashboard', 'Dashboard'],
-            ['/odds', 'Odds'],
-            ['/pricing', 'Pricing'],
-            ['/settings', 'Settings'],
-            ['/login', 'Login'],
-            ['/signup', 'Signup'],
-          ].map(([href, label]) => (
-            <Link key={href} href={href} passHref>
-              <a style={{
-                color: 'white',
-                textDecoration: 'none',
-                fontWeight: 500,
-                transition: 'color 0.2s',
-              }}>
-                {label}
-              </a>
-            </Link>
-          ))}
-        </nav>
-
-        {/* Hero Section */}
         <header className="header">
           <div className="header-content">
             <h1>Institutional-Grade Sports Trading</h1>
@@ -62,47 +27,45 @@ export default function HomePage() {
               beat the market.
             </p>
             <div className="cta-buttons">
-              <Link href="/signup" passHref>
-                <a className="btn btn-primary">Start 7-Day Pro Trial</a>
-              </Link>
-              <Link href="/demo" passHref>
-                <a className="btn btn-secondary">View Platform Demo</a>
-              </Link>
+              <a href="/signup" className="btn btn-primary">
+                Start 7-Day Pro Trial
+              </a>
+              <a href="/demo" className="btn btn-secondary">
+                View Platform Demo
+              </a>
             </div>
           </div>
         </header>
 
-        {/* Stats */}
         <section className="stats">
           {[
             ['5.8%', 'Average Monthly ROI'],
             ['94.3%', 'Closing Line Value'],
             ['47ms', 'Odds Latency'],
             ['18.3x', 'Daily Value Bets'],
-          ].map(([value, label], i) => (
-            <div className="stat-card" key={i}>
+          ].map(([value, label], idx) => (
+            <div className="stat-card" key={idx}>
               <div className="stat-value">{value}</div>
               <div className="stat-label">{label}</div>
             </div>
           ))}
         </section>
 
-        {/* Features */}
         <section className="features">
           <div className="container">
             <div className="section-header">
               <h2>Professional Betting Tools</h2>
               <p>
                 Our platform combines institutional-grade analytics with
-                execution tools designed for serious bettors.
+                execution tools designed for serious bettors
               </p>
             </div>
             <div className="features-grid">
               {[
-                ['fas fa-chart-line', 'Real-Time Market Scanner', 'Monitor 50+ sportsbooks simultaneously...'],
-                ['fas fa-brain', 'AI Value Detection', 'Machine learning models analyze market trends...'],
-                ['fas fa-bell', 'Custom Alert System', 'Set triggers for edge thresholds or line moves...'],
-                ['fas fa-exchange-alt', 'Arbitrage & Trading', 'Find and execute arbitrage with one click...'],
+                ['fas fa-chart-line', 'Real-Time Market Scanner', 'Monitor 50+ sportsbooks...'],
+                ['fas fa-brain', 'AI Value Detection', 'Our machine learning models...'],
+                ['fas fa-bell', 'Custom Alert System', 'Set triggers for specific edge...'],
+                ['fas fa-exchange-alt', 'Arbitrage & Trading', 'Advanced tools for identifying...'],
               ].map(([icon, title, desc], i) => (
                 <div className="feature-card" key={i}>
                   <div className={`feature-icon icon-${i + 1}`}>
@@ -116,57 +79,75 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Demo */}
         <section className="demo">
           <div className="container">
             <div className="demo-content">
               <div className="demo-text">
                 <h2>Professional Trading Interface</h2>
                 <p>
-                  Real-time visibility into market inefficiencies with execution tools.
+                  Our dashboard gives you real-time visibility into betting
+                  market inefficiencies...
                 </p>
                 <p>
-                  Track line movements, monitor sharp money flows, and execute faster.
+                  Monitor sharp money flows, track line movement history, and
+                  execute bets faster...
                 </p>
                 <div className="cta-buttons" style={{ justifyContent: 'flex-start' }}>
-                  <Link href="/signup" passHref>
-                    <a className="btn btn-primary">Get Started</a>
-                  </Link>
+                  <a href="/signup" className="btn btn-primary">
+                    Get Started
+                  </a>
                 </div>
               </div>
               <div className="demo-image">
-                <div style={{
-                  background: 'var(--bg-light)',
-                  height: '400px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'var(--text-muted)'
-                }}>
-                  <i className="fas fa-chart-bar" style={{ fontSize: '3rem' }} />
+                <div
+                  style={{
+                    background: 'var(--bg-light)',
+                    height: '400px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'var(--text-muted)',
+                  }}
+                >
+                  <i className="fas fa-chart-bar" style={{ fontSize: '3rem' }}></i>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Testimonials */}
         <section className="testimonials">
           <div className="container">
             <div className="section-header">
               <h2>Trusted By Professional Bettors</h2>
-              <p>Feedback from pro bettors and syndicate managers.</p>
+              <p>
+                Hear from syndicate managers, professional bettors, and sports
+                traders who use BetSightIQ Pro daily
+              </p>
             </div>
+
             <div className="testimonials-grid">
               {[
-                ['"22% ROI increase with better bankroll allocation."', 'Michael Chen', 'Head of Trading, Atlantic Sports Group'],
-                ['"Beating closing lines by 2–3% across NFL/NBA."', 'Sarah Williamson', 'Professional Sports Bettor'],
-                ['"Institutional tools leveled the field for solo betting."', 'David Rodriguez', 'Elite Member Since 2023'],
-              ].map(([quote, name, title], i) => (
-                <div className="testimonial-card" key={i}>
-                  <div className="testimonial-text">{quote}</div>
+                {
+                  text: `"Since implementing BetSightIQ into our betting operations, we've seen a 22% increase in ROI..."`,
+                  name: 'Michael Chen',
+                  title: 'Head of Trading, Atlantic Sports Group',
+                },
+                {
+                  text: `"The edge detection algorithms have transformed how we identify value. We're consistently beating..."`,
+                  name: 'Sarah Williamson',
+                  title: 'Professional Sports Bettor',
+                },
+                {
+                  text: `"As a solo bettor, having access to institutional tools has leveled the playing field..."`,
+                  name: 'David Rodriguez',
+                  title: 'Elite Member Since 2023',
+                },
+              ].map(({ text, name, title }, idx) => (
+                <div className="testimonial-card" key={idx}>
+                  <div className="testimonial-text">{text}</div>
                   <div className="testimonial-author">
-                    <div className="author-avatar" />
+                    <div className="author-avatar"></div>
                     <div className="author-info">
                       <h4>{name}</h4>
                       <p>{title}</p>
@@ -178,25 +159,24 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="cta">
           <div className="cta-content">
             <h2>Ready to Gain Your Edge?</h2>
             <p>
-              Join 1,200+ pro bettors using BetSightIQ Pro for smarter decisions.
+              Join 1,200+ professional bettors and syndicates using BetSightIQ
+              Pro to make smarter, more profitable betting decisions.
             </p>
             <div className="cta-buttons">
-              <Link href="/signup" passHref>
-                <a className="btn btn-primary">Start 7-Day Pro Trial</a>
-              </Link>
-              <Link href="/contact" passHref>
-                <a className="btn btn-secondary">Contact Sales</a>
-              </Link>
+              <a href="/signup" className="btn btn-primary">
+                Start 7-Day Pro Trial
+              </a>
+              <a href="/contact" className="btn btn-secondary">
+                Contact Sales
+              </a>
             </div>
           </div>
         </section>
 
-        {/* Footer */}
         <footer className="footer">
           <div className="container">
             <div className="footer-grid">
@@ -205,7 +185,8 @@ export default function HomePage() {
                   BetSightIQ<span>Pro</span>
                 </div>
                 <p>
-                  Institutional-grade sports betting analytics and execution tools.
+                  Institutional-grade sports betting analytics and execution
+                  platform for professional bettors and syndicates.
                 </p>
                 <div className="social-links">
                   <a href="#"><i className="fab fa-twitter" /></a>
@@ -218,12 +199,14 @@ export default function HomePage() {
                 ['Platform', ['Features', 'Pricing', 'API', 'Integrations']],
                 ['Resources', ['Documentation', 'Tutorials', 'Blog', 'Research']],
                 ['Company', ['About', 'Careers', 'Legal', 'Contact']],
-              ].map(([title, links], i) => (
-                <div className="footer-links" key={i}>
+              ].map(([title, links], idx) => (
+                <div className="footer-links" key={idx}>
                   <h3>{title}</h3>
                   <ul>
-                    {links.map((link, j) => (
-                      <li key={j}><a href="#">{link}</a></li>
+                    {links.map((link, i) => (
+                      <li key={i}>
+                        <a href="#">{link}</a>
+                      </li>
                     ))}
                   </ul>
                 </div>
