@@ -1,66 +1,145 @@
-import Head from 'next/head';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BetSightIQ - Smarter Sports Betting Insights</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --accent: #3b82f6;
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #ffffff;
+    }
 
-export default function Home() {
-  const statsData = [
-    { title: "Today's Edge", value: "6.8%", subtext: "+1.2% from yesterday", isPositive: true },
-    { title: "Active Bets", value: "14", subtext: "3 new since last hour", isPositive: false },
-    { title: "Hit Rate", value: "62.3%", subtext: "Last 30 days", isPositive: true },
-    { title: "ROI", value: "+18.7%", subtext: "This month", isPositive: true }
-  ];
+    * {
+      box-sizing: border-box;
+    }
 
-  return (
-    <>
-      <Head>
-        <title>BetSightIQ | AI-Powered Betting Intelligence</title>
-        <meta name="description" content="Real-time value betting alerts powered by machine learning" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
 
-      <main className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Header */}
-          <header className="flex flex-wrap items-center justify-between gap-4 border-b border-gray-700 pb-6">
-            <div className="flex items-center gap-2">
-              <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">
-                BetSightIQ
-              </span>
-              <span className="text-emerald-400 text-xs border border-emerald-400/30 px-2 py-1 rounded-full bg-emerald-400/10">
-                +
-              </span>
-            </div>
+    header {
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
 
-            <div className="flex items-center gap-4">
-              <button className="bg-emerald-400/10 text-emerald-400 text-xs px-3 py-1.5 rounded-full border border-emerald-400/30 hover:bg-emerald-400/20 transition">
-                Export Data
-              </button>
-              <div className="w-8 h-8 bg-gray-700 border border-gray-600 rounded-full flex items-center justify-center">
-                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-              </div>
-            </div>
-          </header>
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
 
-          {/* Stats Cards */}
-          <section className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {statsData.map((stat, i) => (
-              <div
-                key={i}
-                className="bg-gray-800/50 border border-gray-700 rounded-xl p-4 hover:bg-gray-800/70 transition-colors"
-              >
-                <div className="text-sm text-gray-400">{stat.title}</div>
-                <div className={`text-2xl font-bold ${stat.isPositive ? 'text-emerald-400' : ''}`}>
-                  {stat.value}
-                </div>
-                <div className="text-xs text-gray-500 mt-1">{stat.subtext}</div>
-              </div>
-            ))}
-          </section>
-        </div>
-      </main>
-    </>
-  );
-}
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    .cta-buttons {
+      margin-top: 2rem;
+    }
+
+    .cta-buttons a {
+      text-decoration: none;
+      background: white;
+      color: var(--primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      margin: 0 0.5rem;
+      display: inline-block;
+      transition: background 0.2s ease-in-out;
+    }
+
+    .cta-buttons a:hover {
+      background: #e0e7ff;
+    }
+
+    main {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #e5e7eb;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bet Smarter with BetSightIQ</h1>
+    <p>Leverage real-time odds, machine learning models, and betting market inefficiencies to make sharper plays. Built for serious bettors.</p>
+    <div class="cta-buttons">
+      <a href="/signup">Get Started</a>
+      <a href="/dashboard">Live Dashboard</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Real-Time Odds Monitoring</h3>
+        <p>Track line movements across sportsbooks in real-time to identify early market signals.</p>
+      </div>
+      <div class="feature-card">
+        <h3>AI-Powered Value Detection</h3>
+        <p>Spot high-EV opportunities using our proprietary machine learning algorithms trained on years of betting data.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Custom Alerts</h3>
+        <p>Set betting thresholds and get instant alerts when profitable edges appear across any major league.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Multi-Sport Insights</h3>
+        <p>Supports NFL, NBA, MLB, NHL, UFC and more. Expand your strategy with cross-sport analysis and trends.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 BetSightIQ. All rights reserved.
+  </footer>
+
+</body>
+</html>
+
